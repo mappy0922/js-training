@@ -4,7 +4,7 @@ import Chart from "../../components/Chart01";
 import instruction from "./instruction.md?raw";
 
 const convertData = (input) => {
-  return input.map(([name,count])=> ({
+  return input.map(([name,count])=> ({//mapは配列の各要素を別の形に変形して、新しい配列を作成する
     name,
     count,
   })); // ここを作りましょう！
