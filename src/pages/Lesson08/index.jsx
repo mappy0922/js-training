@@ -5,9 +5,10 @@ import instruction from "./instruction.md?raw";
 
 const convertData = (input) => {
   for (const item of input) {
-    item.tags.sort();
+    item.tags.sort();//ソートしないと同じペアなのに別物扱いになるから？
   }
 
+  //存在するタグ一覧を取得するため。ないとどんな組み合わせがあるか分からない
   const tagSet = new Set();
   for (const item of input) {
     for (const tag of item.tags) {
@@ -16,6 +17,7 @@ const convertData = (input) => {
   }
   const tags = Array.from(tagSet);
 
+  //ペア回数を数えるため
   const count = {};
   for (const tag1 of tags) {
     count[tag1] = {};

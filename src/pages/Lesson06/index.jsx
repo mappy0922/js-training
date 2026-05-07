@@ -9,7 +9,7 @@ const convertData = (input) => {
     女性: "red",
   };
 
-  return input.map(({ gender, x, y})=> {
+  return input.map(({ gender, x, y})=> {//inputからgender,x,yを取り出し、分割代入する。そして新たに配列を作るということ？
     return {
       color: colors[gender],
       gender,

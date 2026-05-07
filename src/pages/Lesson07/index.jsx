@@ -5,9 +5,9 @@ import instruction from "./instruction.md?raw";
 
 const convertData = (input) => {
   for (const item of input) {
-    const d = new Date(`${item.createdAt} UTC`);
-    const year = d.getFullYear();
-    const month = `${d.getMonth() + 1}`.padStart(2, "0");
+    const d = new Date(`${item.createdAt} UTC`);//$は文字列結合、DateはUTCを日本時間に変換する
+    const year = d.getFullYear();//元号取得
+    const month = `${d.getMonth() + 1}`.padStart(2, "0");//getMonthは0～11で返るので+1して、1～12に修正。padStartは(ここでは)2桁になるまで0を先頭付与。01、02、……
     const date = `${d.getDate()}`.padStart(2, "0");
     item.createdAt = `${year}-${month}-${date}`;
   }
